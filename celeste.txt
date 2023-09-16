@@ -1,0 +1,114 @@
+{! == Comments surrounded by two "==" require your attention ==}
+{oneline:
+    {set:url;https://youtu.be/;}
+    {!Picks number at random when called}
+    {func:f_RNG;
+        {! == Be sure to adjust this number to match how many songs you want to be randomly selected ==}
+        {set:number;{num:1;4;};}
+    ;}
+    
+    {!Selects a song when called - ==Add as many URLs as needed, on youtube, click the share button, 
+    you only need the 11 characters between the / and the ? https://youtu.be/36JtMdp70h0?si=GzRtyytKjS0ja6AJ}
+    {func:f_select;
+        {set:songs;
+            [1] {url}36JtMdp70h0^
+            [2] {url}EPi25G4FonY^
+            [3] {url}ZJqpy4iAm5Y^
+            [4] {url}C59AUL804WQ
+        ;}
+        {! Gets Length of song array,and splits it into individual variables}
+        {void:{set:indlen;{split:index;{songs};^;};};}
+        {! If number variable is a number, it sets the output to the URL in the songs list}
+        {when:{number};is;number;
+            {set:output;{index{number}};}
+        ;}
+    ;}
+    
+    {!Selects a song based on text input
+    ==enter all songs in lower case on their own line, with a ^ at the end to seperate them==}
+    {func:f_string;
+        {set:names;
+            song 1^
+            song 2^
+            song 3
+        ;}
+        {! Gets length of name array, and splits it into seperate variables}
+        {void:{set:indlen;{split:index;{names};^;};};}
+        {! Loops through array and checks vs inputed text, when text matches, sets number to loop iteration}
+        {loop:1,{indlen},1;
+            {when:{lower:{args};};eq;{index{iter}};{set:number;{iter};}
+            ;}
+        ;}
+        {! If there was a match, runs the selection function}
+        {when:{number};is;number;
+            {f_select}
+        ;
+            {! If there was no match, checks for hidden songs
+            ==If you have hidden songs you want to only show up if the title is entered,
+            edit the following secion, otherwise, remove everything below this line}
+            {set:hidden;
+                broken machine^
+                dying light^
+                silverpoint indie game cover collection^
+                children of the ruins indie game cover collection^
+                on little cat feet indie game cover collection^
+                niko and the world machine the indie game cover collection^
+                heart of the machine
+            ;}
+            {set:hiddenurls;
+                [???] {url}_QSUUmLYCL4^
+                [???] {url}ZPle_Vh9aNc^
+                [???] {url}Bd0B7ETjq20^
+                [???] {url}d5btO8aCi7Q^
+                [???] {url}WYIqoGM5XAY^
+                [???] {url}ZPle_Vh9aNc^
+                [???] {url}IYrBdrXFGV4
+            ;}
+            {void:{set:hidlen;{split:hidsdex;{hidden};^;};};}
+           {void:{split:hidurls;{hiddenurls};^;};}
+            {loop:1,{hidlen},1;
+                {when:{lower:{args};};eq;{hidsdex{iter}};{set:hidnumber;{iter};}
+                ;}
+            ;}
+            {when:{hidnumber};is;number;
+                {set:output;{hidurls{hidnumber}};}
+            ;}
+            {!Up to this point}
+        ;}
+    ;}
+
+    {! Check to see if there is an argument, determine if it is a number or not, and run functions accordingly}
+    {when:{number};is;error;
+        {when:{arg1};is;error;
+            {set:ransong;true;}
+            {f_RNG}
+            {f_select}
+        ;
+            {when:{args};is;number;
+                {set:number;{arg1};}
+                {f_select}
+            ;
+                {f_string}
+            ;}
+        ;}
+    ;}
+    
+    {! Determines what to output}
+    {when:{output};is;error;
+        {!Output never got set, so arg was outside array range, or not a song title}
+        {! == Make sure to change the numbers here, and to adjust the text to call it the correct name ==}
+        No song found... Pick a number between 1-53, or check your spelling (Name must be exact, Sorry).\n
+    ;
+        {!Changes text depending on if RNG was used or not}
+        {when:{ransong};eq;true;
+            Enjoy a random song from the XXX OST, and a few extras thrown in for good measure!
+        ;
+            Enjoy a song from the outer wilds OST!
+        ;}\n
+        --------------------------------------\n
+        {output}\n
+        This tag is meant to be taken and edited to add more OSTs to our server!\n
+    ;}
+;}
+    {!!description Randomly selected (or not) [XXX] OST song, because why not! Tag base created by Nelana, edited by [XXX]}
+    {!!library}
