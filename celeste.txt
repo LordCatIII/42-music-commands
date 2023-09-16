@@ -11,10 +11,10 @@
     you only need the 11 characters between the / and the ? https://youtu.be/36JtMdp70h0?si=GzRtyytKjS0ja6AJ}
     {func:f_select;
         {set:songs;
-            [1] {url}36JtMdp70h0^
-            [2] {url}EPi25G4FonY^
-            [3] {url}ZJqpy4iAm5Y^
-            [4] {url}C59AUL804WQ
+            [1] {url}Ctuo3ws3EKs^
+            [2] {url}N8OHSXvneOE^
+            [3] {url}1rwAvUvvQzQ^
+            [4] {url}BFVyvGmwlmk
         ;}
         {! Gets Length of song array,and splits it into individual variables}
         {void:{set:indlen;{split:index;{songs};^;};};}
