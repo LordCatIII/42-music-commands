@@ -4,7 +4,7 @@
     {!Picks number at random when called}
     {func:f_RNG;
         {! == Be sure to adjust this number to match how many songs you want to be randomly selected ==}
-        {set:number;{num:1;4;};}
+        {set:number;{num:1;21;};}
     ;}
     
     {!Selects a song when called - ==Add as many URLs as needed, on youtube, click the share button, 
@@ -14,7 +14,24 @@
             [1] {url}Ctuo3ws3EKs^
             [2] {url}N8OHSXvneOE^
             [3] {url}1rwAvUvvQzQ^
-            [4] {url}BFVyvGmwlmk
+            [4] {url}BFVyvGmwlmk^
+            [5] {url}V8qOjmWIPKs^
+            [6] {url}fOzvP1I5tLU^
+            [7] {url}NRpcwd9MSSE^
+            [8] {url}0etenwnI1wo^
+            [9] {url}mr-SWzqNpM0^
+            [10] {url}FMuQ11tVJnk^
+            [11] {url}FjG0ivBT4lQ^
+            [12] {url}bXfHKEaDg4s^
+            [13] {url}__oZ-LYZ8pU^
+            [14] {url}dTIeaqNXseY^
+            [15] {url}QfhUSYq7jEs^
+            [16] {url}b_oEDGONSc4^
+            [17] {url}oHdSK43cIf8^
+            [18] {url}iDVM9KED46Q^
+            [19] {url}q7QMTo-P6H0^
+            [20] {url}DNOuancg5RY^
+            [21] {url}VHN63n9y1vg
         ;}
         {! Gets Length of song array,and splits it into individual variables}
         {void:{set:indlen;{split:index;{songs};^;};};}
