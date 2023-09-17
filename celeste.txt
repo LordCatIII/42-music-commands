@@ -45,27 +45,27 @@
     ==enter all songs in lower case on their own line, with a ^ at the end to seperate them==}
     {func:f_string;
         {set:names;
-            Prologue^
-            First Steps^
-            Resurrections^
-            Awake^
-            Postcard from Celeste Mountain^
-            Checking In^
-            Spirit of Hospitality^
-            Scattered and Lost^
-            Golden^
-            Anxiety^
-            Quiet and Falling^
-            In the Mirror^
-            Madeline and Theo^
-            Starjump^
-            Reflection^
-            Confronting Myself^
-            Little Goth^
-            Reach for the Summit^
-            Exhale^
-            Heart of the Mountain^
-            My Dearest Friends
+            prologue^
+            first steps^
+            resurrections^
+            awake^
+            postcard from celeste mountain^
+            checking in^
+            spirit of hospitality^
+            scattered and lost^
+            golden^
+            anxiety^
+            quiet and falling^
+            in the mirror^
+            madeline and theo^
+            starjump^
+            reflection^
+            confronting myself^
+            little goth^
+            reach for the summit^
+            exhale^
+            heart of the mountain^
+            my dearest friends
         ;}
         {! Gets length of name array, and splits it into seperate variables}
         {void:{set:indlen;{split:index;{names};^;};};}
