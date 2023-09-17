@@ -98,7 +98,7 @@
                 [???] in^
                 [???] the^
                 [???] future^
-                [Lord Cat] https://lordcatiii.github.io/piano/Quiet-and-Falling-In-the-Mirror.mp3
+                [Lord Cat] https://lordcatiii.github.io/piano/Quiet-and-Falling-In-the-Mirror.MOV
             ;}
             {void:{set:hidlen;{split:hidsdex;{hidden};^;};};}
            {void:{split:hidurls;{hiddenurls};^;};}
