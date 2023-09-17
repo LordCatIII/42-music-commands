@@ -45,9 +45,27 @@
     ==enter all songs in lower case on their own line, with a ^ at the end to seperate them==}
     {func:f_string;
         {set:names;
-            song 1^
-            song 2^
-            song 3
+            Prologue^
+            First Steps^
+            Resurrections^
+            Awake^
+            Postcard from Celeste Mountain^
+            Checking In^
+            Spirit of Hospitality^
+            Scattered and Lost^
+            Golden^
+            Anxiety^
+            Quiet and Falling^
+            In the Mirror^
+            Madeline and Theo^
+            Starjump^
+            Reflection^
+            Confronting Myself^
+            Little Goth^
+            Reach for the Summit^
+            Exhale^
+            Heart of the Mountain^
+            My Dearest Friends
         ;}
         {! Gets length of name array, and splits it into seperate variables}
         {void:{set:indlen;{split:index;{names};^;};};}
@@ -64,22 +82,22 @@
             ==If you have hidden songs you want to only show up if the title is entered,
             edit the following secion, otherwise, remove everything below this line}
             {set:hidden;
-                broken machine^
-                dying light^
-                silverpoint indie game cover collection^
-                children of the ruins indie game cover collection^
-                on little cat feet indie game cover collection^
-                niko and the world machine the indie game cover collection^
-                heart of the machine
+                hidden1^
+                hidden2^
+                hidden3^
+                hidden4^
+                hidden5^
+                hidden6^
+                hidden7
             ;}
             {set:hiddenurls;
-                [???] {url}_QSUUmLYCL4^
-                [???] {url}ZPle_Vh9aNc^
-                [???] {url}Bd0B7ETjq20^
-                [???] {url}d5btO8aCi7Q^
-                [???] {url}WYIqoGM5XAY^
-                [???] {url}ZPle_Vh9aNc^
-                [???] {url}IYrBdrXFGV4
+                [???] put^
+                [???] b^
+                [???] sides^
+                [???] here^
+                [???] in^
+                [???] the^
+                [???] future
             ;}
             {void:{set:hidlen;{split:hidsdex;{hidden};^;};};}
            {void:{split:hidurls;{hiddenurls};^;};}
@@ -114,18 +132,18 @@
     {when:{output};is;error;
         {!Output never got set, so arg was outside array range, or not a song title}
         {! == Make sure to change the numbers here, and to adjust the text to call it the correct name ==}
-        No song found... Pick a number between 1-53, or check your spelling (Name must be exact, Sorry).\n
+        No song found... Pick a number between 1-21, or check your spelling (Name must be exact, Sorry).\n
     ;
         {!Changes text depending on if RNG was used or not}
         {when:{ransong};eq;true;
-            Enjoy a random song from the XXX OST, and a few extras thrown in for good measure!
+            Enjoy a random song from the Celeste OST, and a few extras thrown in for good measure!
         ;
-            Enjoy a song from the outer wilds OST!
+            Enjoy a song from the Celeste OST!
         ;}\n
         --------------------------------------\n
         {output}\n
-        This tag is meant to be taken and edited to add more OSTs to our server!\n
+        No B sides yet - sorry! They will be avaliable in the future via specifying them in the tag call\n
     ;}
 ;}
-    {!!description Randomly selected (or not) [XXX] OST song, because why not! Tag base created by Nelana, edited by [XXX]}
+    {!!description Randomly selected (or not) Celeste OST song, because why not! Tag base created by Nelana, edited by Lord Cat (lord.cat.)}
     {!!library}
