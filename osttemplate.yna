@@ -1,5 +1,4 @@
-{! == Comments surrounded by two "==" require your attention ==}
-{oneline:
+{oneline:{! == Comments surrounded by two "==" require your attention ==}
     {set:url;https://youtu.be/;}
     {!Picks number at random when called}
     {func:f_RNG;
