@@ -127,6 +127,8 @@
                 {f_string}
             ;}
         ;}
+    ;
+    {f_select}
     ;}
     
     {! Determines what to output}
